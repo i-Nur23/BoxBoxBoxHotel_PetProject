@@ -24,5 +24,10 @@
 
             return coatOfArms;
         }
+
+        public IEnumerable<string> GetCityNames()
+        {
+            return context.Cities.Select(x => x.CityName).ToArray();
+        }
     }
 }

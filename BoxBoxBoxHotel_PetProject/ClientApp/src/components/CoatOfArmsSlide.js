@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
     Carousel,
     CarouselItem,
-    CarouselControl,
   } from 'reactstrap';
 
   const CoatOfArmsSlide = (args) => {
@@ -10,6 +9,7 @@ import {
     const [animating, setAnimating] = useState(false);
   
     const items = args.items;
+    const cityNames = args.cityNames;
     
     const next = () => {
       if (animating) return;
@@ -23,15 +23,23 @@ import {
       setActiveIndex(nextIndex);
     };
 
-    const slides = items.map((item) => {
+    //console.log(args);
+    const slides = items.map((item, i, {length}) => {
       return (
         <CarouselItem
           onExiting={() => setAnimating(true)}
           onExited={() => setAnimating(false)}
           key={item}
+          className="row mx-auto"
         >
-          <a href="/chain">
-            <img src={item} class="d-block col-4 coat-of-arms" alt="..."/>
+          <a className="d-inline-flex justify-content-center align-middle col-5 position-relative" href="/chain">
+            <img src={item} class="coat-of-arms" alt="..." title={cityNames[i]}/>
+          </a>
+          <a className="d-inline-flex justify-content-center align-middle col-2"  href="/chain">
+            <img src={items[(i + 1) % length]} class="coat-of-arms" alt="..." title={cityNames[(i + 1) % length]}/>
+          </a>
+          <a className="d-inline-flex justify-content-center align-middle col-5" href="/chain">
+            <img src={items[(i + 2) % length]} class="coat-of-arms" alt="..." title={cityNames[(i + 2) % length]}/>
           </a>
         </CarouselItem>
       );
@@ -43,22 +51,18 @@ import {
         activeIndex={activeIndex}
         next={next}
         previous={previous}
-        interval={false}
-        {...args}
+        interval={6000}
+        slide={false}
         style={{background:"rgba(127,127,128,0.1)"}}
-        className="d-flex justify-content-center py-1 bg-dark bg-opacity-10"
+        className="bg-dark bg-opacity-10 carousel-fade carousel-coats rounded-3 my-4"
       >
         {slides}
-        <CarouselControl
-          direction="prev"
-          directionText="Previous"
-          onClickHandler={previous}
-        />
-        <CarouselControl
-          direction="next"
-          directionText="Next"
-          onClickHandler={next}
-        />
+      <a class="carousel-control-prev"  role="button" tabIndex={0} style={{cursor: "pointer"}} onClick={previous}>
+        <span><i class="bi bi-arrow-left" style={{color: 'black'}}></i></span>
+      </a>
+      <a class="carousel-control-next" role="button" tabIndex={0} style={{cursor: "pointer"}} onClick={next}>
+        <span><i class="bi bi-arrow-right" style={{color: 'black'}}></i></span>
+      </a>
       </Carousel>
     );
   }

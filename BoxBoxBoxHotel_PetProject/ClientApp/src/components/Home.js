@@ -7,7 +7,7 @@ export class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { coatOfArms: [] };
+    this.state = {cityNames: [] ,coatOfArms: [] };
   }
 
   componentDidMount() {
@@ -66,14 +66,34 @@ export class Home extends Component {
         <center className="d-flex justify-content-center"><h1 className="brand-name">BoxBoxBox&nbsp;</h1><h1 style={{display:'inline-block'}}> - Ваш выбор для размещения</h1></center>
         <div className="my-4 clearfix">
           <div className="position-relative">
-            <img src="images/HouseExterier.jpg" alt="наружное фото отеля" className="float-end image-on-homepage"/>
+            <img src="images/HouseExterier.jpg" alt="наружное фото отеля" className="float-end image-on-homepage rounded-3"/>
           </div>
-	        <h3 className="position-absolute">Наше цель - обеспечение Вашего пребывания в городах наиболее<br className="main-text-br"/>комфортным и уютным с сочетанием новых технологии</h3>
+	        <p><h3 className="position-absolute">Наше цель - обеспечение Вашего пребывания в городах наиболее<br className="main-text-br"/>комфортным и уютным с сочетанием новых технологии</h3></p>
         </div>
         
+        <br/>
+
+        <div className="my-4">
+          <h3><a id="hotels-chain" href="/chain">Сеть наших отелей</a> насчитывает уже 7 российских городов. Однако мы не собираемся останавливаться<br className="main-text-br"/>
+          на этом.<br className="main-text-br"/> 
+          Миссия - соединить крупные города России, чтобы даже вдали от дома Вы чувствовали себя как дома</h3>
+        </div>
+
         <CoatOfArmsSlide 
-          items={this.state.coatOfArms}>
+          items= {this.state.coatOfArms}
+          cityNames = {this.state.cityNames}>
         </CoatOfArmsSlide>
+
+        <br/>
+
+        <div className="d-flex justify-content-between" style={{margin: "0 -30px"}}>
+          <img src="images/hotel-of-future.jpg" alt="наружное фото отеля" className="image-on-homepage rounded-3 h-100" style={{margin: "0 30px"}}/>
+	        <div style={{margin: "0 30px"}}>
+            <p className="mx-auto"><h3>Мы стараемся использовать передовые нововведения чтобы<br className="main-text-br"/>упростить жизнь: как Вам, так и нам</h3></p>
+          </div>
+        </div>
+
+        <br/>
 
       </div>
     );
@@ -84,6 +104,7 @@ export class Home extends Component {
         'Content-Type': 'application/json'
       }});
       const data = await response.json();
-      this.setState({ coatOfArms: data });
+      this.setState({ coatOfArms: data.coatOfArms, cityNames: data.cityNames });
+      //console.log(data);
    }
 }
