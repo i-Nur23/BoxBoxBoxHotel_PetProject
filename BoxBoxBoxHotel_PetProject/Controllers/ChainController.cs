@@ -2,7 +2,7 @@
 
 namespace BoxBoxBoxHotel_PetProject.Controllers
 {
-    [Route("chain")]
+    [Route("api/chain")]
     [ApiController]
     public class ChainController : ControllerBase
     {

@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace BoxBoxBoxHotel_PetProject.Controllers
 {
-    [Route("")]
+    [Route("api")]
     [ApiController]
     public class HomePageController : ControllerBase
     {
@@ -22,6 +20,5 @@ namespace BoxBoxBoxHotel_PetProject.Controllers
         {
             return _citiesRepository.GetCoatOfArmsBytes();
         }
-
     }
 }

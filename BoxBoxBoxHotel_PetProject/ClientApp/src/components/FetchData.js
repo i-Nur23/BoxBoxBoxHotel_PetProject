@@ -52,12 +52,10 @@ export class FetchData extends Component {
   }
 
   async populateChain() {
-      const response = await fetch('/chain',{method: 'GET', headers: {
+      const response = await fetch('api/chain',{method: 'GET', headers: {
         'Content-Type': 'application/json'
       }});
-      console.log(response);
       const data = await response.json();
-      console.log(data);
     this.setState({ forecasts: data, loading: false });
   }
 }

@@ -8,9 +8,6 @@ import { UsingTechs } from './components/UsingTechs';
 import { Enter } from './components/Enter';
 import { Register } from './components/Register';
 
-//import './custom.css'
-//import './style-template.css'
-
 export default class App extends Component {
   static displayName = App.name;
 
