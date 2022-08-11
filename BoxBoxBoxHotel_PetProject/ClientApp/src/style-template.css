@@ -10736,3 +10736,10 @@ li.li-home{
 li.li-home:before{
   content: "  -  ";
 }
+
+div#ForTechsImage{
+  width: 35%;
+  border-style: solid;
+  border-color: white;
+  border-left-width: 12px;
+}

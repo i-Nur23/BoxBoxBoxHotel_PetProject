@@ -41,12 +41,12 @@ export class NavMenu extends Component {
   render () {
       return (
           <header className="sticky-top">
-            <Navbar className="navbar-expand-lg navbar-toggleable-sm sticky-top ng-white border-bottom box-shadow mb-5" style={{ backgroundColor: '#b3f2c4'}} light>
-              <Container className="container-fluid">
+            <Navbar className="navbar-expand-lg navbar-toggleable-sm ng-white border-bottom box-shadow mb-5" style={{ backgroundColor: '#b3f2c4'}} light>
+              <Container className="container-fluid d-flex">
                 <NavbarBrand className="" tag={Link} to="/">
                   <p className="h3 py-0 mb-0 brand-name">BoxBoxBox</p><p className="h6 mb-0"><font color="grey">сеть hi-tech гостиниц</font></p>
                 </NavbarBrand>
-                <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+              <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                 <Collapse class="d-sm-inline-flex flex-sm-row" isOpen={!this.state.collapsed} navbar>  
                   <ul className="navbar-nav pl-3 w-75">
                     <NavItem><this.spaceBetween/></NavItem>
@@ -64,8 +64,8 @@ export class NavMenu extends Component {
                     </NavItem>
                   </ul>
                 </Collapse>
-                  <div className="d-inline-flex ml-auto justify-content-center">
-                  <ul className="navbar-nav flex-grow">
+                  <div className="d-inline-flex">
+                  <ul className="navbar-nav flex-grow align-items-center">
                     <NavItem>
                         <NavLink tag={Link} className="btn btn-secondary p-2" to="/Enter"><font color="white">Войти</font></NavLink>
                       </NavItem>

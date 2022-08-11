@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import CoatOfArmsSlide from './CoatOfArmsSlide';
-import { UncontrolledCarousel } from 'reactstrap';
+import CoatOfArmsSlide from '../elements/CoatOfArmsSlide';
 
 export class Home extends Component {
   static displayName = Home.name;
