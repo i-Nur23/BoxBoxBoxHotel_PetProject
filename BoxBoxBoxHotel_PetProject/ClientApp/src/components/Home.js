@@ -74,7 +74,7 @@ export class Home extends Component {
         <br/>
 
         <div className="my-4">
-          <h3><a id="hotels-chain" href="/chain">Сеть наших отелей</a> насчитывает уже 7 российских городов. Однако мы не собираемся останавливаться<br className="main-text-br"/>
+          <h3><a class="grey-ref" href="/chain">Сеть наших отелей</a> насчитывает уже 7 российских городов. Однако мы не собираемся останавливаться<br className="main-text-br"/>
           на этом.<br className="main-text-br"/> 
           Миссия - соединить крупные города России, чтобы даже вдали от дома Вы чувствовали себя как дома</h3>
         </div>
@@ -84,16 +84,34 @@ export class Home extends Component {
           cityNames = {this.state.cityNames}>
         </CoatOfArmsSlide>
 
-        <br/>
+        <br/><br/>
 
         <div className="d-flex justify-content-between" style={{margin: "0 -30px"}}>
-          <img src="images/hotel-of-future.jpg" alt="наружное фото отеля" className="image-on-homepage rounded-3 h-100" style={{margin: "0 30px"}}/>
+          <img src="images/hotel-of-future.jpg" alt="внутри отелей" className="image-on-homepage rounded-3 h-100" style={{margin: "0 30px"}}/>
 	        <div style={{margin: "0 30px"}}>
-            <p className="mx-auto"><h3>Мы стараемся использовать передовые нововведения чтобы<br className="main-text-br"/>упростить жизнь: как Вам, так и нам</h3></p>
+            <p className="mx-auto"><h3>Мы стараемся использовать <a className="grey-ref" href="/usingTechnologies">передовые нововведения</a> чтобы<br className="main-text-br"/>упростить жизнь: как Вам, так и нам</h3></p>
           </div>
         </div>
 
-        <br/>
+        <br/><br/>
+
+        <div className="d-flex justify-content-between" style={{margin: "0 -30px"}}>
+          <div style={{margin: "0 30px"}}>
+            <p className="mx-auto"><h3>Постояльцы остаются настолько довольны <a className="grey-ref" href="/rooms">
+              комнатами
+            </a> за счет того, что: 
+            <ul>
+              <br className="main-text-br"/>
+              <li className="li-home">Мы советуемся со специалистами для Вашего здорового сна</li>
+              <br className="main-text-br"/>
+              <li className="li-home">Наши работники ежедневно следят за частотой и делают уборку</li>
+            </ul>
+            </h3></p>
+          </div>
+          <img src="images/homepage-room-image.jpg" alt="комната отеля" className="image-on-homepage rounded-3 h-100" style={{margin: "0 30px"}}/>
+        </div>
+
+        <br/><br/>
 
       </div>
     );

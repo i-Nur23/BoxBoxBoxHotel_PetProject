@@ -9,17 +9,7 @@ namespace BoxBoxBoxHotel_PetProject.Controllers
         private readonly ILogger<HomePageController> _logger;
         private readonly CitiesRepository _citiesRepository;
 
-        public class HomeInfo
-        {
-            public IEnumerable<string> cityNames { get; set; }
-            public IEnumerable<string> coatOfArms { get; set; }
-
-            public HomeInfo(IEnumerable<string> coatOfArms, IEnumerable<string> cityNames)
-            {
-                this.cityNames = cityNames;
-                this.coatOfArms = coatOfArms;
-            }
-        }
+        public record class HomeInfo(IEnumerable<string> coatOfArms, IEnumerable<string> cityNames);
 
         public HomePageController(ILogger<HomePageController> logger, CitiesRepository citiesRepository)
         {
@@ -30,7 +20,7 @@ namespace BoxBoxBoxHotel_PetProject.Controllers
         [HttpGet]
         public HomeInfo Get()
         {
-            return new  HomeInfo(_citiesRepository.GetCoatOfArmsBytes(), _citiesRepository.GetCityNames());
+            return new HomeInfo(_citiesRepository.GetCoatOfArmsBytes(), _citiesRepository.GetCityNames());
         }
     }
 }

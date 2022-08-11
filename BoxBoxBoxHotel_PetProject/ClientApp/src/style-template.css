@@ -10702,8 +10702,7 @@ br.main-text-br{
   width: 100px;
   filter:grayscale(90%);
   transition: 0.5s;
-  animation: show 1.5s forwards;   
-  /*animation-fill-mode: forwards;*/
+  animation: show 1.5s forwards;
 }
 
 .coat-of-arms:hover{
@@ -10720,12 +10719,20 @@ br.main-text-br{
   }
 }
 
-a#hotels-chain{
+a.grey-ref{
   color:grey;
   text-decoration: none;
 }
 
-a#hotels-chain:hover{
+a.grey-ref:hover{
   color: black;
   text-decoration: underline;
+}
+
+li.li-home{
+  list-style-type: none;
+}
+
+li.li-home:before{
+  content: "  -  ";
 }
